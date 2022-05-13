@@ -8,6 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
+
+/**
+ * @author : M.A.M Nusky
+ * Registration Number : IT19167442
+ */
+
+
 @Entity
 @Table(name="products")
 
