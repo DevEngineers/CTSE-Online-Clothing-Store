@@ -1,7 +1,5 @@
 name: User Service Docker Build Deploy
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 jobs:
@@ -20,6 +18,6 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: ./user-service/Dockerfile
+        file: user-service/Dockerfile
         push: true
         tags: ${{ secrets.USER_SERVICE_DOCKER_USERNAME }}/ctse-user-service:${{ github.sha }}
