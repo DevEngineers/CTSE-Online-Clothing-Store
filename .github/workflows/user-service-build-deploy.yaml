@@ -30,4 +30,4 @@ jobs:
         context: .
         file: ./user-service/Dockerfile
         push: true
-        tags: ${{ secrets.USER_SERVICE_DOCKER_USERNAME }}/example-test:${{ github.sha }}
+        tags: ${{ secrets.USER_SERVICE_DOCKER_USERNAME }}/ctse-user-service:${{ github.sha }}
