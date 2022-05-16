@@ -31,3 +31,4 @@ jobs:
           file: ./transport-service/Dockerfile
           push: true
           tags: ${{ secrets.PAYMENT_SERVICE_DOCKER_USERNAME }}/ctse-transport-service:${{ github.sha }}
+          # test
