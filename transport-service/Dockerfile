@@ -1,5 +1,7 @@
-# define base docker image
 FROM openjdk:11
-LABEL maintainer="it19018256"
-ADD target/transport-service-0.0.1-SNAPSHOT.jar springboot-docker-trasport.jar
-ENTRYPOINT [ "java","-jar", "springboot-docker-trasport.jar"]
+
+ARG JAR_FILE=./product-service/target/*.jar
+
+COPY ${JAR_FILE} app.jar
+
+ENTRYPOINT ["java","-jar","/app.jar"]
