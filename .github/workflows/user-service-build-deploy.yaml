@@ -34,6 +34,8 @@ jobs:
         file: ./user-service/Dockerfile
         push: true
         tags: ${{ secrets.USER_SERVICE_DOCKER_USERNAME }}/ctse-user-service:${{ github.sha }}
+    - name: Update config files in k8s
+      run: sed -i.bak 's/{{tag}}/${{ github.sha }}/g' k8s/user-service-deploy.yaml && rm k8s/*.bak
     - name: Setup Google Cloud
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.3
       env:
@@ -44,4 +46,4 @@ jobs:
     - name: Connect to GKE
       run: |-
         gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
-        kubectl get pods
+        apply -f ./k8s/user-service-deploy.yaml
