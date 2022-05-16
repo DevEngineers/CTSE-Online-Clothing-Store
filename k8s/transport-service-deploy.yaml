@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   generation: 1
   labels:
-    app: ctse-user-service
-  name: ctse-user-service
+    app: transport-servic
+  name: transport-servic
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -12,7 +12,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: ctse-user-service
+      app: transport-servic
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -22,20 +22,19 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: ctse-user-service
+        app: transport-servic
     spec:
       containers:
-      - image: akeelmnm/ctse-user-service:{{tag}}
-        imagePullPolicy: Always
-        name: ctse-user-service
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-        ports:
-        - containerPort: 3000
+        - image: sm2irfan/ctse-transport-service:{{tag}}
+          imagePullPolicy: Always
+          name: ctse-transport-service
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          ports:
+            - containerPort: 8090
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-status: {}
