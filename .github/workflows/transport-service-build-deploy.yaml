@@ -30,7 +30,7 @@ jobs:
 
         run: |
 
-          cd ./transport-service
+          cd ../transport-service
 
           mvn --batch-mode --update-snapshots package
 
