@@ -5,3 +5,4 @@ ARG JAR_FILE=./transport-service/target/*.jar
 COPY ${JAR_FILE} app.jar
 
 ENTRYPOINT ["java","-jar","/app.jar"]
+# test
