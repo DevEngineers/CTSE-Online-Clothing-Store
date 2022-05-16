@@ -1,7 +1,7 @@
 name: Transport Service Docker Build Deploy
 on:
   pull_request:
-    branches: [transport-service]
+    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
