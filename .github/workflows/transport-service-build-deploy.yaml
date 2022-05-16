@@ -1,7 +1,7 @@
-name: Transport Service Docker Build Deploy
+name: Payment Service Docker Build Deploy
 on:
   pull_request:
-    branches: [transport-service]
+    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,17 +17,17 @@ jobs:
           distribution: "adopt"
       - name: Build with Maven
         run: |
-          cd ./transport-service 
+          cd ./payment-service 
           mvn --batch-mode --update-snapshots package
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.TRANSPORT_SERVICE_DOCKER_USERNAME }}
-          password: ${{ secrets.TRANSPORT_SERVICE_DOCKER_ACCESS_TOKEN }}
+          username: ${{ secrets.PAYMENT_SERVICE_DOCKER_USERNAME }}
+          password: ${{ secrets.PAYMENT_SERVICE_DOCKER_ACCESS_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./transport-service/Dockerfile
+          file: ./payment-service/Dockerfile
           push: true
-          tags: ${{ secrets.PAYMENT_SERVICE_DOCKER_USERNAME }}/ctse-transport-service:${{ github.sha }}
+          tags: ${{ secrets.PAYMENT_SERVICE_DOCKER_USERNAME }}/ctse-payment-service:${{ github.sha }}
