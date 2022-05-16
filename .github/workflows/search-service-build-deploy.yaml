@@ -31,4 +31,3 @@ jobs:
         file: ./search-service/Dockerfile
         push: true
         tags: ${{ secrets.SEARCH_SERVICE_DOCKER_USERNAME }}/ctse-search-service:${{ github.sha }}
-        sss
