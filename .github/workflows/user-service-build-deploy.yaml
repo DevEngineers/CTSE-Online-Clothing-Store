@@ -2,6 +2,9 @@ name: User Service Docker Build Deploy
 on:
   pull_request:
     branches: [ master ]
+env:
+  GKE_ZONE: us-central1-c
+  GKE_CLUSTER: ctse-project-cluster
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -38,3 +41,6 @@ jobs:
       with:
         service_account_key: ${{ secrets.GKE_USER_PAYMENT_SERVICES_KEY }}
         project_id: ${{ secrets.GKE_USER_PAYMENT_SERVICES_PROJECTID }}
+    - name: Connect to GKE
+      run: |-
+        gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
