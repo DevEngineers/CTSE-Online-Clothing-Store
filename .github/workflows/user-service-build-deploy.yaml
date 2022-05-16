@@ -43,7 +43,7 @@ jobs:
       with:
         service_account_key: ${{ secrets.GKE_USER_PAYMENT_SERVICES_KEY }}
         project_id: ${{ secrets.GKE_USER_PAYMENT_SERVICES_PROJECTID }}
-    - name: Connect to GKE
+    - name: Deploy Docker Image in Google Kubernetes Engine Cluster
       run: |-
         gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
-        apply -f ./k8s/user-service-deploy.yaml
+        kubectl apply -f ./k8s/user-service-deploy.yaml
