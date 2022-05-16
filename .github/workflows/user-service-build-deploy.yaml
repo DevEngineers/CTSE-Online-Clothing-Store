@@ -44,3 +44,4 @@ jobs:
     - name: Connect to GKE
       run: |-
         gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
+        kubectl get pods
