@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: ctse-payment-service
+  name: ctse-payment-service
+spec:
+  ports:
+  - port: 3001
+    protocol: TCP
+    targetPort: 3001
+  selector:
+    app: ctse-payment-service
+status:
+  loadBalancer: {}
