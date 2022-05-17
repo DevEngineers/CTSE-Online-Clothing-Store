@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: transport-servic
-  name: transport-servic
+  name: transport-service
 spec:
   type: NodePort
   ports:
