@@ -1,8 +1,10 @@
 FROM openjdk:11
 
-ARG JAR_FILE=./transport-service/target/*.jar
+# ARG JAR_FILE=./transport-service/target/*.jar
 
-COPY ${JAR_FILE} app.jar
+# COPY ${JAR_FILE} app.jar
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+ADD ./transport-service/target/*.jar springboot-docker-trasport.jar
+
+ENTRYPOINT ["java","-jar","/springboot-docker-trasport.jar"]
 # test
