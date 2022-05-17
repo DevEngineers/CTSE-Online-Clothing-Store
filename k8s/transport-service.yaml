@@ -10,6 +10,7 @@ spec:
     - port: 8090
       protocol: TCP
       targetPort: 8090
+      type: NodePort
   selector:
     app: transport-servic
 status:
