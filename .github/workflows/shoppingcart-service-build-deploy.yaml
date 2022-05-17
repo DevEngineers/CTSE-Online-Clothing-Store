@@ -1,4 +1,4 @@
-name: User Service Docker Build Deploy
+name: Shopping Cart Service Docker Build Deploy
 on:
   pull_request:
     branches: [ master ]
