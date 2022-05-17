@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: [ master ]
 env:
-  GKE_ZONE: us-central1-c
+  GKE_ZONE: us-east4-b
   GKE_CLUSTER: ctse-project-cluster
 jobs:
   build:
