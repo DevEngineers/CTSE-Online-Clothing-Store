@@ -46,4 +46,4 @@ jobs:
     - name: Deploy Docker Image in Google Kubernetes Engine Cluster
       run: |-
         gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
-        kubectl apply -f ./k8s/Search-service-deploy.yaml
+        kubectl apply -f ./k8s/search-service-deploy.yaml
