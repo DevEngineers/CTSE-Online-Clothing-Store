@@ -25,7 +25,7 @@ spec:
         app: ctse-search-service
     spec:
       containers:
-      - image: zumry/ctse-search-service:015242cfd0d4e198948b26f679bfd8b69d3d1a08
+      - image: zumry/ctse-search-service:{{tag}}
         imagePullPolicy: Always
         name: ctse-search-service
         resources: {}
