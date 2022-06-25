@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ctse-project</groupId>
-	<artifactId>user-service</artifactId>
+	<artifactId>search-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>user-service</name>
+	<name>search-service</name>
 	<description>CTSE user-service microservice project</description>
 	<properties>
 		<java.version>11</java.version>
@@ -28,12 +28,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>     
-				<exclusion>        
-			 		<groupId>org.springframework.boot</groupId>  
-			        <artifactId>spring-boot-starter-tomcat</artifactId> 
-			     </exclusion>
-			</exclusions> 
+			<exclusions>    
+                <exclusion>        
+                    <groupId>org.springframework.boot</groupId>  
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                 </exclusion>
+            </exclusions>
 		</dependency>
 
 		<dependency>

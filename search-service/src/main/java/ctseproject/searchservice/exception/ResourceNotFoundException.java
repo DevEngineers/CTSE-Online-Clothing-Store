@@ -1,4 +1,4 @@
-package ctseproject.userservice.exception;
+package ctseproject.searchservice.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
